@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Regulação Floripa</title>
+<meta name="description" content="Gerência de Regulação em Saúde da Secretaria Municipal de Saúde de Florianópolis.">
+<link rel="icon" href="https://regulacaosmsfloripa.com/wp-content/uploads/2025/08/regulacaonovo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Regulação Floripa — folha de estilo única do site estático
+   Paleta herdada do site original: azul institucional #004AAD, ciano #1CDAFF. */
+
+:root {
+  --azul: #004aad;
+  --azul-escuro: #00337a;
+  --ciano: #1cdaff;
+  --tinta: #10182b;
+  --texto: #2b3446;
+  --cinza: #5d6778;
+  --linha: #dde3ec;
+  --fundo: #f4f6fa;
+  --branco: #fff;
+  --max: 1080px;
+  --raio: 10px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+body {
+  margin: 0;
+  font-family: Montserrat, "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--texto);
+  background: var(--fundo);
+  -webkit-text-size-adjust: 100%;
+}
+
+.faixa {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+img { max-width: 100%; height: auto; }
+
+a { color: var(--azul); }
+a:focus-visible,
+summary:focus-visible,
+.hamburguer:focus-visible {
+  outline: 3px solid var(--ciano);
+  outline-offset: 2px;
+}
+
+.pular {
+  position: absolute;
+  left: -9999px;
+  background: var(--branco);
+  color: var(--azul);
+  padding: 10px 16px;
+  z-index: 100;
+}
+.pular:focus { left: 12px; top: 12px; }
+
+/* ---------------------------------------------------------------- cabeçalho */
+.topo {
+  background: var(--azul);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 2px 10px rgba(0, 32, 80, .25);
+}
+
+.topo .faixa {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 62px;
+  flex-wrap: wrap;
+}
+
+.marca {
+  color: var(--branco);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: .02em;
+  text-decoration: none;
+  margin-right: auto;
+  padding: 10px 0;
+}
+
+.hamburguer {
+  display: none;
+  color: var(--branco);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  gap: 2px;
+}
+
+.menu a {
+  display: block;
+  color: var(--branco);
+  text-decoration: none;
+  font-size: .82rem;
+  font-weight: 500;
+  padding: 10px 11px;
+  border-radius: 6px;
+}
+
+.menu a:hover,
+.menu a.ativo { color: var(--ciano); }
+
+.menu a.ativo { box-shadow: inset 0 -2px 0 var(--ciano); }
+
+.menu .tem-sub { position: relative; }
+
+.menu .sub {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  min-width: 240px;
+  flex-direction: column;
+  background: var(--azul);
+  border-top: 3px solid var(--ciano);
+  padding: 6px 0;
+  box-shadow: 0 10px 24px rgba(0, 32, 80, .3);
+}
+
+.menu .tem-sub:hover .sub,
+.menu .tem-sub:focus-within .sub { display: flex; }
+
+.menu .sub a { padding: 9px 16px; border-radius: 0; }
+
+/* ------------------------------------------------------------------ conteúdo */
+main { padding: 34px 0 56px; min-height: 62vh; }
+
+main .faixa > * { max-width: 72ch; }
+
+main h1 {
+  font-size: clamp(1.45rem, 1.1rem + 1.4vw, 2rem);
+  line-height: 1.25;
+  color: var(--tinta);
+  margin: 0 0 24px;
+  padding-bottom: 14px;
+  border-bottom: 3px solid var(--azul);
+  max-width: none;
+}
+
+main h2 {
+  font-size: 1.2rem;
+  color: var(--azul-escuro);
+  margin: 36px 0 12px;
+  line-height: 1.35;
+}
+
+main h3, main h4, main h5, main h6 {
+  font-size: 1.02rem;
+  color: var(--azul-escuro);
+  margin: 26px 0 8px;
+}
+
+main p { margin: 0 0 14px; }
+
+main ul, main ol { margin: 0 0 16px; padding-left: 22px; }
+main li { margin-bottom: 6px; }
+
+main blockquote {
+  margin: 18px 0;
+  padding: 12px 18px;
+  border-left: 4px solid var(--ciano);
+  background: var(--branco);
+  border-radius: 0 var(--raio) var(--raio) 0;
+  color: var(--tinta);
+}
+
+main img {
+  border-radius: var(--raio);
+}
+
+main > .faixa > img,
+main > .faixa > figure {
+  display: block;
+  margin: 22px 0;
+  max-width: 560px;
+}
+
+figure { margin: 22px 0; }
+figcaption { font-size: .85rem; color: var(--cinza); margin-top: 6px; }
+
+/* ------------------------------------------------------------------- botões */
+a.botao {
+  display: inline-block;
+  background: var(--azul);
+  color: var(--branco);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: .9rem;
+  padding: 11px 20px;
+  border-radius: 999px;
+  margin: 4px 8px 10px 0;
+}
+
+a.botao:hover { background: var(--azul-escuro); }
+
+/* -------------------------------------------------- listas de protocolos/PDF */
+ul.lista-docs {
+  list-style: none;
+  margin: 8px 0 28px;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  max-width: none;
+}
+
+ul.lista-docs li { margin: 0; }
+
+ul.lista-docs a {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  background: var(--branco);
+  border: 1px solid var(--linha);
+  border-left: 4px solid var(--azul);
+  border-radius: var(--raio);
+  padding: 12px 14px;
+  font-size: .88rem;
+  font-weight: 500;
+  color: var(--tinta);
+  text-decoration: none;
+  height: 100%;
+}
+
+ul.lista-docs a:hover {
+  border-left-color: var(--ciano);
+  background: #f0f6ff;
+}
+
+ul.lista-docs a.pdf::after { content: "PDF"; }
+
+ul.lista-docs a[href$=".png"]::after,
+ul.lista-docs a[href$=".jpg"]::after,
+ul.lista-docs a[href$=".jpeg"]::after { content: "IMG"; }
+
+ul.lista-docs a.pdf::after,
+ul.lista-docs a[href$=".png"]::after,
+ul.lista-docs a[href$=".jpg"]::after,
+ul.lista-docs a[href$=".jpeg"]::after {
+  flex: 0 0 auto;
+  margin-top: 2px;
+  font-size: .64rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: var(--cinza);
+  border: 1px solid var(--linha);
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+
+/* ------------------------------------------------------------------- cartões */
+.grade-cards {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  margin: 24px 0 32px;
+  max-width: none;
+}
+
+a.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background: var(--branco);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  padding: 18px;
+  text-decoration: none;
+  color: var(--tinta);
+}
+
+a.card img { width: 100%; max-width: 190px; }
+
+a.card span {
+  font-weight: 600;
+  font-size: .86rem;
+  text-align: center;
+  color: var(--azul);
+}
+
+a.card:hover { border-color: var(--azul); background: #f0f6ff; }
+
+/* ------------------------------------------------------------------ sanfonas */
+main details {
+  background: var(--branco);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  margin: 0 0 10px;
+  max-width: none;
+}
+
+main details summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 14px 46px 14px 16px;
+  font-weight: 600;
+  font-size: .92rem;
+  color: var(--azul-escuro);
+  position: relative;
+}
+
+main details summary::-webkit-details-marker { display: none; }
+
+main details summary::after {
+  content: "+";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--azul);
+}
+
+main details[open] summary::after { content: "–"; }
+main details[open] summary { border-bottom: 1px solid var(--linha); }
+
+main details > *:not(summary) {
+  margin: 0;
+  padding: 0 16px;
+}
+
+main details > *:not(summary):first-of-type { padding-top: 14px; }
+main details > *:last-child { padding-bottom: 14px; }
+
+/* ------------------------------------------------------------------- galeria */
+.galeria {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  margin: 24px 0;
+  max-width: none;
+}
+
+.galeria a { display: block; }
+.galeria figure { margin: 0; }
+.galeria img { width: 100%; border: 1px solid var(--linha); background: var(--branco); }
+
+/* ------------------------------------------------------------- logos da home */
+.logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 26px;
+  margin: 0 0 28px;
+  max-width: none;
+}
+
+.logos figure { margin: 0; }
+.logos img { max-height: 54px; width: auto; border-radius: 0; }
+
+/* -------------------------------------------------------------------- rodapé */
+.rodape {
+  background: var(--azul);
+  color: var(--branco);
+  padding: 26px 0;
+  margin-top: 40px;
+}
+
+.rodape .faixa {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rodape a { color: var(--branco); }
+.rodape .contatos { display: flex; flex-direction: column; gap: 6px; font-size: .88rem; }
+.rodape .orgao { font-size: .8rem; text-align: right; }
+.rodape .orgao p { margin: 0; line-height: 1.55; }
+
+/* --------------------------------------------------------------- responsivo */
+@media (max-width: 860px) {
+  .hamburguer { display: block; }
+
+  .menu {
+    flex-basis: 100%;
+    display: none;
+    padding-bottom: 10px;
+  }
+
+  #abre-menu:checked ~ .menu { display: block; }
+
+  .menu ul { flex-direction: column; align-items: stretch; gap: 0; }
+
+  .menu a { padding: 12px 8px; border-bottom: 1px solid rgba(255, 255, 255, .16); }
+
+  .menu .sub {
+    display: flex;
+    position: static;
+    box-shadow: none;
+    border-top: 0;
+    padding: 0 0 0 14px;
+    min-width: 0;
+  }
+
+  .menu .sub a { font-size: .78rem; opacity: .9; }
+
+  .rodape .faixa { flex-direction: column; align-items: flex-start; }
+  .rodape .orgao { text-align: left; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+@media print {
+  .topo, .rodape, .pular { display: none; }
+  body { background: #fff; font-size: 12pt; }
+}
+</style>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="topo">
+  <div class="faixa">
+    <a class="marca" href="./">Regulação Floripa</a>
+    <input type="checkbox" id="abre-menu" hidden>
+    <label class="hamburguer" for="abre-menu" aria-label="Abrir menu">&#9776;</label>
+    <nav class="menu" aria-label="Menu principal">
+      <ul>
+        <li><a href="./" class="ativo">Home</a></li>
+        <li><a href="noticias/">Notícias</a></li>
+        <li class="tem-sub">
+        <a href="protocolos-de-acesso/">Ofertas de Serviços e Protocolos de Acesso</a>
+        <ul class="sub">
+        <li><a href="especialidades/">ESPECIALIDADES</a></li>
+        <li><a href="exames/">EXAMES</a></li>
+        <li><a href="odontologia/">ODONTOLOGIA</a></li>
+        <li><a href="protocolos-ses/">PROTOCOLOS SES</a></li>
+        </ul></li>
+        <li class="tem-sub">
+        <a href="alto-custo-tfd/">Alto Custo/TFD</a>
+        <ul class="sub">
+        <li><a href="apac/">APAC</a></li>
+        <li><a href="aih/">AIH</a></li>
+        <li><a href="tfd/">TFD</a></li>
+        <li><a href="saude-auditiva-2/">SAÚDE AUDITIVA</a></li>
+        </ul></li>
+        <li><a href="portarias-e-normativas/">Portarias e Normativas</a></li>
+        <li><a href="faq/">FAQ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+  <div class="faixa">
+    <h1>Gerência de Regulação em Saúde de Florianópolis</h1>
+    <div class="logos"><figure><img alt="sms" loading="lazy" src="https://regulacaosmsfloripa.com/wp-content/uploads/2025/07/sms-300x79.png"/></figure><figure><img alt="logoult" loading="lazy" src="https://regulacaosmsfloripa.com/wp-content/uploads/2025/08/logoult-300x76.png"/></figure><figure><img alt="download (1)" loading="lazy" src="https://regulacaosmsfloripa.com/wp-content/uploads/2025/07/download-1-300x79.png"/></figure><figure><img alt="logoult" loading="lazy" src="https://regulacaosmsfloripa.com/wp-content/uploads/2025/08/logoult-1-300x76.png"/></figure></div>
+     <p>A Gerência de Regulação da Secretaria Municipal de Saúde de Florianópolis é responsável por organizar e coordenar o acesso dos usuários aos serviços de saúde no âmbito do SUS, promovendo o uso racional e equitativo dos recursos disponíveis. Atua em diversas frentes, como a regulação ambulatorial, hospitalar, de urgência e de apoio diagnóstico e terapêutico.</p><p>Este site foi criado como uma ferramenta de apoio para os profissionais da rede, reunindo em um só lugar informações, orientações, fluxos, legislações e documentos essenciais relacionados aos processos regulatórios. Nosso objetivo é promover mais agilidade, transparência e segurança nas práticas regulatórias do SUS Floripa.</p> <a class="botao" href="mailto:regulacao@floripa.sc.gov.br">Entre em Contato</a>
+    <img alt="" height="800" loading="lazy" src="https://regulacaosmsfloripa.com/wp-content/uploads/2025/07/HJiodMTCoO34PSRoCVZQl-1.png" width="800"/> <h2>LINKS ÚTEIS </h2> <a class="botao" href="https://florianopolis.celk.com.br/lista-publica?84" rel="noopener" target="_blank">LISTA PÚBLICA</a>
+    <a class="botao" href="https://listadeespera.saude.sc.gov.br/#/home" rel="noopener" target="_blank">LISTA DE ESPERA DE CONSULTAS SES</a>
+    <a class="botao" href="https://listadeespera.saude.sc.gov.br/#/home" rel="noopener" target="_blank">LISTA DE ESPERA DE CIRURGIAS ELETIVAS SES</a>
+    <h2>OUVIDORIA SES</h2>
+    <a class="botao" href="https://www.saude.sc.gov.br/index.php/pt/ouvidoria" rel="noopener" target="_blank">ouvidoria@saude.sc.gov.br</a>
+    
+    <a class="botao" href="tel:08000482800">0800 048 2800</a>
+  </div>
+</main>
+
+<footer class="rodape">
+  <div class="faixa">
+    <div class="contatos">
+      <a href="contato/">Contato</a>
+      <a href="mailto:regulacao@floripa.sc.gov.br">regulacao@floripa.sc.gov.br</a>
+      <a href="https://www.instagram.com/saudepmf" target="_blank" rel="noopener">Instagram @saudepmf</a>
+    </div>
+    <div class="orgao">
+      <p>Prefeitura Municipal de Florianópolis</p>
+      <p>Secretaria Municipal de Saúde de Florianópolis</p>
+      <p>Diretoria de Atenção Especializada</p>
+      <p>Gerência de Regulação em Saúde</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
